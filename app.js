@@ -9,15 +9,15 @@ const io = new Server(server);
 const users = [];
 const rooms = [];
 
-app.use("/public", express.static(path.join(__dirname, "/public")));
+app.use("/public", express.static(path.join(__dirname, "src/public")));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "src/views"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/index.html"));
+  res.sendFile(path.join(__dirname, "src/views/index.html"));
 });
 app.get("/chat", (req, res) =>
-  res.sendFile(path.join(__dirname, "views/chat_index.html"))
+  res.sendFile(path.join(__dirname, "src/views/chat_index.html"))
 );
 app.get("/create", (req, res) => {
   res.render("createRoom.ejs");
