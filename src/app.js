@@ -1,23 +1,32 @@
+const createError = require("http-errors");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
 const express = require("express");
 const app = express();
 const http = require("http");
 const server = http.createServer(app);
-const path = require("path");
 const { Server } = require("socket.io");
 const io = new Server(server);
-
+const { APP_HOST, APP_PORT } = require("./config/config");
 const users = [];
 const rooms = [];
 
-app.use("/public", express.static(path.join(__dirname, "src/public")));
+app.set("port", APP_PORT);
+
+app.use(logger("dev"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use("/public", express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "src/views"));
+app.set("views", path.join(__dirname, "views"));
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "src/views/index.html"));
+  res.sendFile(path.join(__dirname, "views/index.html"));
 });
 app.get("/chat", (req, res) =>
-  res.sendFile(path.join(__dirname, "src/views/chat_index.html"))
+  res.sendFile(path.join(__dirname, "views/chat_index.html"))
 );
 app.get("/create", (req, res) => {
   res.render("createRoom.ejs");
@@ -62,6 +71,6 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => {
-  console.log("Listening on port 3000");
+server.listen(app.get("port"), () => {
+  console.log("Listening on port", app.get("port"));
 });

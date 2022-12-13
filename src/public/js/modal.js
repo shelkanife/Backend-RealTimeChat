@@ -30,5 +30,5 @@ function createRoom() {
     alert("complete the required fields");
     return;
   }
-  window.location = `http://localhost:3000/rooms/${roomname}?nickname=${nickname}&join=false`;
+  window.location = `rooms/${roomname}?nickname=${nickname}&join=false`;
 }

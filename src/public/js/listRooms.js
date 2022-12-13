@@ -33,8 +33,7 @@ btnJoin.addEventListener("click", function () {
 });
 function checkName() {
   const nickname = document.getElementById("nickname").value;
-  if (nickname)
-    window.location = `http://localhost:3000/rooms/${id}?nickname=${nickname}&join=true`;
+  if (nickname) window.location = `${id}?nickname=${nickname}&join=true`;
   else alert("Necesitas un nickname para entrar a una sala");
 }
 

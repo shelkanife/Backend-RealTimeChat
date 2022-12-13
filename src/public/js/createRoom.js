@@ -7,5 +7,5 @@ btn.addEventListener("click", () => {
   socket.emit("connection.new", nickname);
   socket.emit("room.create", roomname);
   alert("created");
-  window.location = `http://localhost:3000/rooms/${roomname}?nickname=${nickname}&join=false`;
+  window.location = `rooms/${roomname}?nickname=${nickname}&join=false`;
 });
