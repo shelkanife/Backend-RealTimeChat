@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/de54260f21.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Chat room</title>
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1>Chat rooms</h1>
+      </section>
+      <section id="cards-wrapper">
+        <div class="card" id="open" onclick="showModal()">
+          Create a new room
+          <i class="fa-solid fa-circle-plus"></i>
+        </div>
+
+        <div class="card">
+          <a href="/rooms">
+            Join to a room
+            <i class="fa-solid fa-circle-plus"></i>
+          </a>
+        </div>
+      </section>
+
+      <div class="modal" id="modal">
+        <div class="modal-content">
+          <span class="close" id="close">&times;</span>
+          <h4>Create new chat room</h4>
+          <div class="form-control">
+            <label>Nickname</label>
+            <input type="text" name="nickname" id="nickname" />
+          </div>
+          <div class="form-control">
+            <label>Room name</label>
+            <input type="text" name="roomName" id="roomname" />
+          </div>
+          <div class="form-control">
+            <button id="create" onclick="createRoom()">Create new room</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/public/js/modal.js"></script>
+  </body>
+</html>

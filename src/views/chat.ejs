@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <!-- <link rel="stylesheet" href="/public/css/main.css" /> -->
+    <title>Room X</title>
+  </head>
+  <body>
+    <h1>Chat room: <span id="id-chat"><%= id %></span></h1>
+    <main>
+      <section id="chat">
+        <input
+          style="display: none"
+          id="nickname"
+          data-nickname="<%= nickname %>"
+        />
+        <ul id="messages"></ul>
+      </section>
+      <section class="form">
+        <form id="form">
+          <!-- <i class="fa-regular fa-face-smile"></i>
+                <i class="fa-solid fa-paperclip"></i> -->
+          <input
+            autofocus
+            type="text"
+            id="input"
+            placeholder="Write here your message"
+            autocomplete="off"
+          />
+          <button id="button">Send</button>
+        </form>
+      </section>
+    </main>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/js/socket.js"></script>
+    <% if(join === true){ %>
+    <script src="/public/js/joinToRoom.js"></script>
+    <% } else { %>
+    <script src="/public/js/joinToOwnRoom.js"></script>
+    <% } %>
+  </body>
+</html>

@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Nerko+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font-family: "Kanit", sans-serif;
+}
+main {
+  height: calc(100% - 150px);
+  padding-left: 8%;
+  padding-right: 8%;
+}
+#chat {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  /* border: 1px solid; */
+}
+body {
+  background-color: #efeae2;
+}
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+}
+.form {
+  background-color: #f0f2f5;
+}
+form {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  background-color: #f0f2f5;
+  padding: 10px;
+  padding-left: 8%;
+  padding-right: 8%;
+  align-items: center;
+  height: 100px;
+}
+/* i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  margin-right: 10px;
+  cursor: pointer;
+} */
+i:first-child {
+  margin-left: 10px;
+}
+input[type="text"] {
+  border: none;
+  padding: 1rem 1rem;
+  flex-grow: 1;
+  border-radius: 1rem;
+  font-style: 20px;
+  margin-right: 10px;
+}
+button {
+  border: none;
+  padding: 1rem 0.8rem;
+  margin: 0.25rem;
+  border-radius: 3px;
+  outline: none;
+}
+form button {
+  opacity: 0;
+  transition: all 0.2s;
+  background-color: #cfd0d3;
+}
+.enable {
+  opacity: 1;
+}
+li {
+  border-radius: 4px 0 0 4px;
+  padding: 5px;
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+ul {
+  list-style: none;
+}
+li p {
+  position: relative;
+  padding: 10px;
+  max-width: 75%;
+}
+p.in {
+  background-color: #d6cccc;
+}
+p.out {
+  background-color: #059ce2;
+}
+p span {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  display: block;
+}
+span.out {
+  right: -15px;
+  border-left: 8px solid #059ce2;
+  border-top: 8px solid #059ce2;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+span.in {
+  left: -15px;
+  border-right: 8px solid #d6cccc;
+  border-top: 8px solid #d6cccc;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+}
+.out {
+  direction: rtl;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+.in {
+  direction: ltr;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+}

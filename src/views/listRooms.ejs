@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/public/css/main.css" />
+    <link rel="stylesheet" href="/public/css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/de54260f21.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Rooms' list</title>
+  </head>
+  <body>
+    <main>
+      <h1>Room's list</h1>
+      <!-- <input type="text" name="nickname" id="nickname" /> -->
+      <ul id="room-list">
+        <!-- <li class="room-item">
+          <div class="icons-wrapper">
+            <span>
+              <i class="fa-sharp fa-solid fa-users i-users"></i>
+              54
+            </span>
+            <i class="fa-solid fa-ellipsis i-settings"></i>
+          </div>
+          <h3>dave-room</h3>
+          <p class="host"><strong>Host:</strong> dave</p>
+          <p class="description">
+            This is a brief description about the room content
+          </p>
+          <button class="btn-join">JOIN</button>
+        </li> -->
+      </ul>
+    </main>
+    <div class="modal" id="modal">
+      <div class="modal-content">
+        <span class="close" id="close">&times;</span>
+        <h4>Nickname</h4>
+        <div class="form-control">
+          <label>Nickname</label>
+          <input type="text" name="nickname" id="nickname" />
+        </div>
+        <div class="form-control">
+          <button id="join" data-roomname="">Join to room</button>
+        </div>
+      </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/public/js/modal.js"></script>
+    <script src="/public/js/listRooms.js"></script>
+  </body>
+</html>
