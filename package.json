@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "mocha --reporter spec",
     "dev": "nodemon src/index.js",
     "test-coverage": "istanbul cover --include-all-sources spec/specs.js && istanbul check-coverage"
   },
