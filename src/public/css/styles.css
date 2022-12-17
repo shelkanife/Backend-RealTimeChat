@@ -15,7 +15,7 @@ main {
   padding-right: 8%;
 }
 #chat {
-  height: 100%;
+  height: 90%;
   overflow-y: auto;
   overflow-x: hidden;
   /* border: 1px solid; */
@@ -42,6 +42,8 @@ form {
   padding-right: 8%;
   align-items: center;
   height: 100px;
+  box-shadow: 5px 0px 5px rgb(157, 156, 156);
+
 }
 /* i {
   display: inline-block;
@@ -97,6 +99,8 @@ p.in {
 }
 p.out {
   background-color: #059ce2;
+  margin-right: 15px;
+  direction: ltr;
 }
 p span {
   position: absolute;
@@ -112,7 +116,7 @@ span.out {
   border-bottom: 8px solid transparent;
 }
 span.in {
-  left: -15px;
+  left: -30px;
   border-right: 8px solid #d6cccc;
   border-top: 8px solid #d6cccc;
   border-bottom: 8px solid transparent;
@@ -128,5 +132,53 @@ span.in {
   direction: ltr;
   align-items: flex-start;
   display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+header{
+  background-color: #fff;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 5px rgb(157, 156, 156);
+}
+.room-icon{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #059ce2;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.room-icon::before{
+  content: "";
+  height: 5px;
+  display: block;
+  width: 80%;
+  background-color: #fff;
+}
+.room-icon::after{
+  content: "";
+  height: 5px;
+  display: block;
+  width: 80%;
+  background-color: #fff;
+}
+.btn{
+  background-color: #156082;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.room-info{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }

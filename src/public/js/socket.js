@@ -4,6 +4,7 @@ var form = document.getElementById("form");
 var input = document.getElementById("input");
 var button = document.getElementById("button");
 var id = document.getElementById("id");
+const chat = document.getElementById('chat')
 
 input.addEventListener("input", function (e) {
   if (input.value) {
@@ -23,7 +24,7 @@ const appendMsg = (msg, out) => {
   p.appendChild(span);
   li.appendChild(p);
   messages.appendChild(li);
-  window.scrollTo(0, document.body.scrollHeight);
+  chat.scrollTop = chat.scrollHeight;
 };
 
 form.addEventListener("submit", function (e) {

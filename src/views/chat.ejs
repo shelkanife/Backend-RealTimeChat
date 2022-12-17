@@ -9,7 +9,14 @@
     <title>Room X</title>
   </head>
   <body>
-    <h1>Chat room: <span id="id-chat"><%= id %></span></h1>
+    <header>
+      <span class="room-icon"></span>
+      <div class="room-info">
+        <span>Chat room:</span>
+        <h1><span id="id-chat"><%= id %></span></h1>
+      </div>
+      <button id="leave" class="btn">Leave</button>
+    </header>
     <main>
       <section id="chat">
         <input
